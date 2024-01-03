@@ -10,6 +10,7 @@ describe('About', () => {
     await browser.url('https://practice.sdetunicorns.com/');
 
     await $('#get-started').click();
-    await expect(browser).toHaveUrl('get-started/');
+
+    await expect(browser).toHaveUrl(expect.stringContaining('get-started'));
   });
 });

@@ -1,3 +1,5 @@
+// required for autocompletion
+
 {
     "compilerOptions": {
         "types": [
@@ -5,5 +7,6 @@
             "@wdio/globals/types",
             "@wdio/mocha-framework"
         ]
-    }
+    },
+    "exclude": ["node_modules"]
 }

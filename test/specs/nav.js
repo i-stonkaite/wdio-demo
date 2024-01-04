@@ -1,6 +1,8 @@
+import HomePage from '../pages/home-page.js';
+
 describe('Navigation Menu', () => {
   it('Get the text of all menu items & assert them', async () => {
-    await browser.url('/');
+    await HomePage.open();
 
     const expectedLinks = [
       'Home',
@@ -16,7 +18,8 @@ describe('Navigation Menu', () => {
     // wait for the Home text to be displayed on the nav menu
     await browser.waitUntil(
       async function () {
-        const homeText = await $('#zak-primary-menu li').getText();
+        const homeText =
+          await HomePage.NavComponent.navigationMenuFirstLink.getText();
         return homeText === 'Home';
       },
       {
@@ -25,7 +28,7 @@ describe('Navigation Menu', () => {
       }
     );
 
-    const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]');
+    const navLinks = await HomePage.NavComponent.navigationMenuLinks;
 
     for (let link of navLinks) {
       actualLinks.push(await link.getText());

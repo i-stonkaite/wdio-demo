@@ -2,7 +2,7 @@
     "plugins": ["wdio"],
     "extends": [
         "eslint:recommended",
-        "plugin:wdio/recommended",
+        "plugin:wdio/recommended"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",

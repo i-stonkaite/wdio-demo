@@ -1,8 +1,10 @@
+import blogPage from '../pages/blog-page.js';
+
 describe('Blog', () => {
   it('Open Contact Page, fill the form & assert success message', async () => {
-    await browser.url('/blog');
+    await blogPage.open();
 
-    const recentPosts = await $$('#recent-posts-3 ul li');
+    const recentPosts = await blogPage.recentPostsList;
 
     await expect(recentPosts).toHaveLength(5);
 
